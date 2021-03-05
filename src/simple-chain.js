@@ -14,9 +14,9 @@ const chainMaker = {
 
   removeLink(position) {
 
-    if (this.chain[position - 1] === undefined) {
+    if (this.chain[position - 1] === undefined || isNaN(position)) {
     this.chain = [];
-    throw new CustomError('Not implemented');
+    throw new Error();
     }
 
     this.chain.splice(position-1, 1);
